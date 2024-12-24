@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>*animal noises*</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="led-circle">
+    <h1>click the wittle animalz</h1>
+</div>
+
+<div class="animals">
+    <img src="https://pomf2.lain.la/f/p6y9b0zj.jpg" alt="Cat" class="animal" onclick="playSound('cat')">
+    <img src="https://pomf2.lain.la/f/3ns9ois2.jpg" alt="Dog" class="animal" onclick="playSound('dog')">
+    <img src="https://pomf2.lain.la/f/5qoqy182.jpeg" alt="Cow" class="animal" onclick="playSound('cow')">
+    <img src="https://pomf2.lain.la/f/hy6tz0pw.jpg" alt="Sheep" class="animal" onclick="playSound('sheep')">
+    <img src="https://pomf2.lain.la/f/tko1h6wj.jpg" alt="Duck" class="animal" onclick="playSound('duck')">
+    <img src="https://pomf2.lain.la/f/8cqd511.jpg" alt="Horse" class="animal" onclick="playSound('horse')">
+    <img src="https://pomf2.lain.la/f/4c4jx1e2.jpg" alt="Ferret" class="animal" onclick="playSound('ferret')"> <!-- Added Ferret -->
+</div>
+
+<audio id="cat" src="https://files.offshore.cat/5yEBHpjR.mp3"></audio>
+<audio id="dog" src="https://files.offshore.cat/zsh9I7pz.mp3"></audio>
+<audio id="cow" src="https://files.offshore.cat/nIHQGNZw.mp3"></audio>
+<audio id="sheep" src="https://files.offshore.cat/ux4HrRPL.mp3"></audio>
+<audio id="duck" src="https://pomf2.lain.la/f/gvpdnsh.mp3"></audio>
+<audio id="horse" src="https://files.offshore.cat/po1JNAOA.mp3"></audio>
+<audio id="ferret" src="https://files.offshore.cat/aQ42k0a4.mp3"></audio> 
+
+<script>
+    function playSound(animal) {
+        const sound = document.getElementById(animal);
+        sound.currentTime = 0; // Rewind to the start
+        sound.play();
+        
+        // Add shake animation
+        const animalImg = event.target;
+        animalImg.classList.add('shake');
+        setTimeout(() => {
+            animalImg.classList.remove('shake');
+        }, 500); // Remove shake class after 500ms
+    }
+</script>
+
+</body>
+</html>
